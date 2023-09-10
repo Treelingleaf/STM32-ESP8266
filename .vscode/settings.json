@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "oled.h": "c",
+        "limits": "c",
+        "memory": "c",
+        "w25q64.h": "c",
+        "systemconfig.h": "c",
+        "stm32f10x.h": "c"
+    }
+}
