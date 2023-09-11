@@ -714,6 +714,16 @@
               <FileType>1</FileType>
               <FilePath>.\Hardware\Moter.c</FilePath>
             </File>
+            <File>
+              <FileName>ESP8266.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\ESP8266.c</FilePath>
+            </File>
+            <File>
+              <FileName>DHT11.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\DHT11.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

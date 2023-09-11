@@ -5,6 +5,7 @@
 #define BUTTON1_PIN     GPIO_Pin_6
 #define BUTTON2_PIN     GPIO_Pin_7
 #define BUTTON3_PIN     GPIO_Pin_5
+#define BUTTON4_PIN     GPIO_Pin_4
 
 
 void key_Init(void);

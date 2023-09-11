@@ -33,6 +33,8 @@
 ".\objects\w25q64.o"
 ".\objects\encoder.o"
 ".\objects\moter.o"
+".\objects\esp8266.o"
+".\objects\dht11.o"
 ".\objects\systemconfig.o"
 ".\objects\main.o"
 ".\objects\stm32f10x_it.o"

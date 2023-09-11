@@ -52,6 +52,9 @@
 #define LED3_CMDPage    3
 #define MOTER_CMDPage    4
 
+//ESP8266
+#define ESP_TCPPage 11
+
 #define LED_ON 0x0F
 #define LED_OFF 0x0E
 
@@ -64,9 +67,9 @@ typedef enum SPI_SS_Level{
 
 
 void W25Q64_InitConfig(void);
-void ReadStringFromW25Q64(uint32_t RegAddress, char* str, uint32_t str_length);
+void ReadStringFromW25Q64(uint8_t Page, char* str, uint32_t str_length);
 void W25Q64_ReadArray(uint32_t RegAddress, uint8_t* Array, uint32_t ArrayLen);
-void WriteStringToW25Q64(uint32_t RegAddress, const char* str);
+void WriteStringToW25Q64(uint8_t Page, const char* str);
 void W25Q64_WriteArray(uint32_t RegAddress,uint8_t* Array);
 void W25Q64_EraseData(uint8_t Page);
 void W25Q64_WriteCMD(uint8_t Page,uint8_t Divice_Cmd);

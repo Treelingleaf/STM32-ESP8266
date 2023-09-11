@@ -36,3 +36,5 @@
 .\objects\main.o: .\Hardware\key.h
 .\objects\main.o: .\Hardware\Encoder.h
 .\objects\main.o: .\Hardware\Moter.h
+.\objects\main.o: .\Hardware\DHT11.h
+.\objects\main.o: .\Hardware\ESP8266.h

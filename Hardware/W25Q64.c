@@ -168,7 +168,8 @@ void W25Q64_WriteCMD(uint8_t Page,uint8_t Divice_Cmd){
 
 
 
-void WriteStringToW25Q64(uint32_t RegAddress, const char* str) {
+void WriteStringToW25Q64(uint8_t Page, const char* str) {
+    uint32_t Address = (0xF0 << 12) | (Page* 4096);
     // 计算字符串的长度，包括结尾的空字符 '\0'
     uint32_t str_length = strlen(str) + 1; // +1 是为了包括空字符 '\0'
     
@@ -182,10 +183,10 @@ void WriteStringToW25Q64(uint32_t RegAddress, const char* str) {
     }
     
     // 将字符串转换为字节数组
-    memcpy(data, str, str_length);
+    strcpy((char *)data, str);
     
     // 调用 W25Q64 写入函数，将字节数组写入 W25Q64
-    W25Q64_WriteArray(RegAddress, data);
+    W25Q64_WriteArray(Address, data);
     
     // 释放动态分配的内存
     free(data);
@@ -217,7 +218,8 @@ void W25Q64_ReadArray(uint32_t RegAddress, uint8_t* Array, uint32_t ArrayLen) {
     SPI_State(Stop);
 }
 
-void ReadStringFromW25Q64(uint32_t RegAddress, char* str, uint32_t str_length) {
+void ReadStringFromW25Q64(uint8_t Page, char* str, uint32_t str_length) {
+    uint32_t Address = (0xF0 << 12) | (Page * 4096);
     // 动态分配内存来存储字节数组
     uint8_t *data = (uint8_t *)malloc(str_length);
     if (data == NULL) {
@@ -227,7 +229,7 @@ void ReadStringFromW25Q64(uint32_t RegAddress, char* str, uint32_t str_length) {
     }
 
     // 调用 W25Q64 读取函数，将数据读取到字节数组中
-    W25Q64_ReadArray(RegAddress, data, str_length);
+    W25Q64_ReadArray(Address, data, str_length);
     
     // 将字节数组转换为字符串
     strncpy(str, (char*)data, str_length);

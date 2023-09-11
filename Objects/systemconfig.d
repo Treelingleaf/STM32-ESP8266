@@ -36,3 +36,5 @@
 .\objects\systemconfig.o: .\Hardware\key.h
 .\objects\systemconfig.o: .\Hardware\Encoder.h
 .\objects\systemconfig.o: .\Hardware\Moter.h
+.\objects\systemconfig.o: .\Hardware\DHT11.h
+.\objects\systemconfig.o: .\Hardware\ESP8266.h

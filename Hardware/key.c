@@ -9,7 +9,7 @@ void key_Init(void) {
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
 
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
-    GPIO_InitStructure.GPIO_Pin = BUTTON1_PIN | BUTTON2_PIN | BUTTON3_PIN;
+    GPIO_InitStructure.GPIO_Pin = BUTTON1_PIN | BUTTON2_PIN | BUTTON3_PIN | BUTTON4_PIN;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 
     GPIO_Init(KEY_GPIOX, &GPIO_InitStructure);
@@ -40,6 +40,14 @@ uint8_t key_Getnum(void) {
         // 去抖动
         Delay_ms(20);
         return 3;
+    }
+
+    if (GPIO_ReadInputDataBit(KEY_GPIOX, BUTTON4_PIN) == 0) {
+        // 等待按键释放
+        while (GPIO_ReadInputDataBit(KEY_GPIOX, BUTTON4_PIN) == 0);
+        // 去抖动
+        Delay_ms(20);
+        return 4;
     }
 
     return 0; // 没有按键按下
