@@ -1,10 +1,19 @@
 # STM32-ESP8266
 STM32+ ESP8266 small project, similar to smart home control
+
 LED：PA0-PA3
+
 W25Q64:CS--A4   DO--A6   SLK--A5   DI--A7
+
 TB6612:PWM--A3   IN1--A12 IN2--A12
+
 KEY: PB4-PB7
+
 ESP8266:USART2   PA9  PA10
+
 OLED:SCK--PB8  SDA--PB9
+
 DHT11: PA8
+
 编码器：PB0 PB1
+
